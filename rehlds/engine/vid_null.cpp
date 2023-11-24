@@ -43,7 +43,15 @@ void SCR_UpdateScreen() { }
 void V_Init() { }
 void Draw_Init() { }
 void SCR_Init() { }
-void R_Init() { }
+
+void R_Init()
+{
+#ifdef REHLDS_FIXES
+	Cvar_RegisterVariable(&r_cachestudio);
+#endif
+
+}
+
 void R_ForceCVars(qboolean multiplayer) { }
 void SCR_BeginLoadingPlaque(qboolean reconnect) { }
 void SCR_EndLoadingPlaque() { }
